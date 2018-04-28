@@ -1,0 +1,15 @@
+{
+	// Leave it blank for default behaviour
+	//   foo.md
+	//   foo
+	//   |-foo0.png
+	//   |-foo1.png
+	//   |-foo2.png
+	// Or set a string for custom names, for example: "bar"
+	//   foo.md
+	//   bar
+	//   |-bar0.png
+	//   |-bar1.png
+	//   |-bar2.png
+	"dirname": ""
+}

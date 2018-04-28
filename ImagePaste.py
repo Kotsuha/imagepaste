@@ -47,8 +47,13 @@ class ImagePasteCommand(sublime_plugin.TextCommand):
 		view = self.view
 		filename = view.file_name()
 
-		# create dir in current path with the name of current filename
-		dirname, _ = os.path.splitext(filename)
+		settings_dirname = sublime.load_settings('ImagePaste.sublime-settings').get('dirname')
+		if settings_dirname:
+			currentdir = os.path.dirname(filename)
+			dirname = os.path.join("%s/%s" % (currentdir, settings_dirname))
+		else:
+			# create dir in current path with the name of current filename
+			dirname, _ = os.path.splitext(filename)
 
 		# create new image file under currentdir/filename_without_ext/filename_without_ext%d.png
 		fn_without_ext = os.path.basename(dirname)
